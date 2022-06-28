@@ -1,84 +1,63 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <link href="base.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <style>
-        html {
-            height: 100%;
-        }
-
-        body {
-            height: 100%;
-            overflow: hidden;
-            margin: 0px;  /* removes default style */
-            display: flex;  /* enables flex content for its children */
-            box-sizing: border-box;
-        }
-
-        .column {
-            height: 100%;  /* allows both columns to span the full height of the browser window */
-            display: flex;
-            flex-direction: column;  /* stacks the left and right headers above the bottom content */
-        }
-
-        #left {
-            flex-shrink: 0;  /* makes sure that content is not cut off in a smaller browser window */
-        }
-
-        .top-left {
-            flex-shink: 0;
-        }
-
-        .top-right {
-            flex-shrink: 0;
-            display: flex;
-        }
-
-        ul {
-            display: flex;
-            list-style: none;
-        }
-
-        .bottom {
-            flex-grow: 1;  /* ensures that the container will take up the full height of the parent container */
-            overflow-y: auto;  /* adds scroll to this container */
-        }
-    </style>
 
 
 </head>
 <body>
-<div id="left" class="column">
-    <div class="top-left">
-        <h1>Settings</h1>
-    </div>
-    <div class="bottom">
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom bg-light">
+            <h2>Config Options</h2>
+        </div>
         <form>
-            <label for="valueFrom">From:</label><br>
-            <input type="text" id="valueFrom" name="valueFrom" value="1"><br>
-            <label for="valueTo">To:</label><br>
-            <input type="text" id="valueTo" name="valueTo" value="10">
-            <label for="delayFrom">Delay From (ms):</label><br>
-            <input type="text" id="delayFrom" name="delayFrom" value="1000">
-            <label for="delayTo">Delay To (ms):</label><br>
-            <input type="text" id="delayTo" name="delayTo" value="3000">
-            <input class="bi bi-play" type="submit" value="Submit">
+            <div class="list-group list-group-flush">
+
+                <div class="list-group-item list-group-item-action list-group-item-light p-3">
+                        <label for="valueFrom">From:</label>
+                        <input class="list-group-item list-group-item-action list-group-item-light p-3" type="text" id="valueFrom" name="valueFrom" value="1">
+                </div>
+
+                <div class="list-group-item list-group-item-action list-group-item-light p-3">
+                                <label for="valueTo">To:</label>
+                                <input class="list-group-item list-group-item-action list-group-item-light p-3" type="text" id="valueTo" name="valueTo" value="10">
+                </div>
+
+                <div class="list-group-item list-group-item-action list-group-item-light p-3">
+                                <label for="delayFrom">Delay From (ms):</label>
+                                <input class="list-group-item list-group-item-action list-group-item-light p-3" type="text" id="delayFrom" name="delayFrom" value="3000">
+                </div>
+
+                <div class="list-group-item list-group-item-action list-group-item-light p-3">
+                                <label for="delayTo">Delay To (ms):</label>
+                                <input class="list-group-item list-group-item-action list-group-item-light p-3" type="text" id="delayTo" name="delayTo" value="5000">
+                </div>
+
+                <button id="startStop" type="button" class="btn btn-lg btn-success" onClick="startStopAction();">Run / Stop</button>
+            </div>
         </form>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Page content-->
+        <div class="container-fluid">
+            <div class="main-target" id="main-target">
+            </div>
 
+        </div>
     </div>
 </div>
-<div id="right" class="column">
-    <div class="top-right">
-        <h1>Current</h1>
-    </div>
-    <div class="bottom">
-
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
+<script type="text/javascript" src="logic.js"></script>
 </html>
