@@ -1,2 +1,2 @@
 # RandomSite
-(RandomSite)[https://th-lange.github.io/RandomSite/]
+[RandomSite](https://th-lange.github.io/RandomSite/)
